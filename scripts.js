@@ -18,7 +18,7 @@ function calculateCosts(e) {
     const moneySpent = (km * litersPerHundredKm * gasPrice) / travelerCount;
 
     console.log(moneySpent);
-    output.textContent = `Every person must pay ${moneySpent.toFixed(2)} euro`;
+    output.textContent = `${moneySpent.toFixed(2)}€ no cilvēka;`;
 }
 function toggleBtn() {
     const areInputFieldsFilled = distance.value !== "" && price.value !== "" && consumption.value !== "" && travelers.value !== "";
