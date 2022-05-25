@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Benzīna izmaksu kalkulators</title>
+</head>
+<body>
+    <form id="form">
+        <label for="distance">Distance</label>
+        <input type="number" name="distance" id="distance">
+        <label for="price">Gas price</label>
+        <input type="number" name="price" id="price">
+        <label for="consumption">Gas consumption (L/100km)</label>
+        <input type="number" name="consumption" id="consumption">
+        <label for="travelers">Travelers</label>
+        <input type="number" name="travelers" id="travelers" value="2">
+        <p>Every person must pay: </p>
+        <output for="distance consumption price travelers" name="cost-per-person" id="total"></output>
+        <button id="btn" type="submit">Calculate</button>
+    </form>
+    <script src="scripts.js" async></script>
+</body>
+</html>
