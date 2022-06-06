@@ -13,21 +13,32 @@ body {
     
 }
 #form {
-    margin: 0 auto;
+    margin: 1em auto;
     display: flex;
     flex-direction: column;
     max-width: 600px;
     align-items: center;
+    /* height: 100vh; */
+}
+h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color:rgb(92, 4, 104)
 }
 label {
     margin: 1.4em 0 0.5em;
     font-weight: 600;
     letter-spacing: 0.7px;
+    
+}
+label[for=distance]{
+    margin-top: 1em;
 }
 input {
     text-align: center;
     padding: 0.8em 1em;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     width: 80%;
     background-color: #fff;
@@ -38,6 +49,7 @@ input:focus {
     outline:rgba(253, 109, 42, 1) 3px solid;
 }
 
+
 #btn {
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
@@ -45,7 +57,7 @@ input:focus {
     color: #fff;
     font-weight: 700;
     padding: 0.8em 1.6em;
-    margin: 0.5em 0;
+    margin: 1.5em 0 0.5em;
     border-radius: 15px;
     transition: box-shadow 0.1s ease-in, color 0.1s ease-in;
 
@@ -59,7 +71,14 @@ input:focus {
     color: rgba(255, 255, 255, 0.2);
     cursor: none;
     box-shadow: none;
+    border: 2px solid #000;
 }
 #total {
     font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 600px) {
+    input {
+        padding: 0.4rem 1rem;
+    }
 }

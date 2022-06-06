@@ -7,21 +7,22 @@ const submitBtn = document.getElementById("btn");
 const output = document.getElementById("total");
 
 submitBtn.addEventListener('click', calculateCosts);
-form.addEventListener('change', toggleBtn);
+form.addEventListener('input', toggleBtn);
 
 function calculateCosts(e) {
     e.preventDefault();
     const km = parseInt(distance.value);
     const gasPrice = parseInt(price.value);
-    const litersPerHundredKm = parseInt(consumption.value) /100;
+    const gasConsumption = parseInt(consumption.value)
     const travelerCount = parseInt(travelers.value);
-    const moneySpent = (km * litersPerHundredKm * gasPrice) / travelerCount;
-
-    console.log(moneySpent);
-    output.textContent = `${moneySpent.toFixed(2)}€ no cilvēka;`;
+    const gasUsed = (km * gasConsumption) / 100;
+    const moneySpent = gasUsed * gasPrice;
+    const costPerPerson = moneySpent / travelerCount;
+    output.textContent = `${costPerPerson.toFixed(2)}€ no cilvēka;`;
 }
 function toggleBtn() {
-    const areInputFieldsFilled = distance.value !== "" && price.value !== "" && consumption.value !== "" && travelers.value !== "";
-    if (!areInputFieldsFilled) submitBtn.disabled = true
+    const inputFields = Array.from(form.getElementsByTagName("input"));
+    const areInputFieldsFilled = inputFields.every(field => field.value)
+    if(!areInputFieldsFilled) submitBtn.disabled = true
     else submitBtn.disabled = false;
 }
